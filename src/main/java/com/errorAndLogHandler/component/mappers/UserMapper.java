@@ -8,13 +8,13 @@ import com.errorAndLogHandler.entity.User;
 @Component
 public class UserMapper {
 
-    public UserDTO toDto(User user) {
+    public static UserDTO toDto(User user) {
         if (user == null) return null;
-        return new UserDTO(user.getId(), user.getName(), user.getEmail());
+        return new UserDTO(user.getUsername(), user.getEmail(),user.getPassword() ,user.getRole());
     }
 
-    public User toEntity(UserDTO dto) {
+    public static User toEntity(UserDTO dto) {
         if (dto == null) return null;
-        return new User(dto.id(), dto.name(), dto.email());
+        return new User(dto.getUsername(), dto.getEmail(),dto.getPassword(), dto.getRole());
     }
 }

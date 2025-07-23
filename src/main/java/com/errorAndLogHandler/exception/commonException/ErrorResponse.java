@@ -6,10 +6,11 @@ public record ErrorResponse(
     LocalDateTime timestamp,
     String error,
     String message,
-    String path
-) {
-    public ErrorResponse(String error, String message, String path) {
-        this(LocalDateTime.now(), error, message, path);
-    }
+    String path,
+    int status
+    ) {
+        public ErrorResponse(String error, String message, String path,int status) {
+            this(LocalDateTime.now(), error, message, path,status);
+        }
 }
 
